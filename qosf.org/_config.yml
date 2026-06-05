@@ -1,0 +1,67 @@
+# Theme settings
+defaults:
+  - scope:
+      path: "archive"
+      type: "pages"
+    values:
+      layout: "page"
+      permalink: /:path/:basename/
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+doks:
+    baseurl: 'https://qosf.org'
+    color_theme: blue # Available themes: blue (default), green, purple, red and yellow
+    header:
+        logo:
+            image: assets/img/logos/qosf_colour_logo.svg
+        nav:
+            - item_name: Home
+              item_url: '/'
+            - item_name: Manifesto
+              item_url: '/manifesto'
+            - item_name: Learn
+              item_url: '/learn_quantum'
+            - item_name: Code
+              item_url: '/project_list'
+            - item_name: Evaluation
+              item_url: '/evaluation'
+            - item_name: Mentorship
+              item_url: '/qc_mentorship'
+            - item_name: uhday
+              item_url: '/uhday'
+    footer:
+        content:
+            logo:
+                text: Quantum Open Source Foundation (QOSF)
+                image:
+            copyright: 'The content of this website is released under the <a href="https://github.com/qosf/qosf.org/blob/master/LICENSE">CC0 1.0 Universal</a> license.'
+        social_list:
+            - network_name: linkedin
+              profile_url: 'https://www.linkedin.com/company/qosf'
+            - network_name: youtube
+              profile_url: 'https://www.youtube.com/channel/UCcEdG3UB19AZMxHymhefh1Q'
+    google_analytics:
+        tracking_code: # Add your Google Analytics tracking code to activate Google Analytics
+    comments:
+        disqus_forum_shortname: # Add your disqus forum shortname to activate comments
+
+# SASS settings
+#sass:
+#    sass_dir: ./doks-theme/_sass
+#    style: compressed
+
+plugins:
+- jekyll-latex
+- jekyll-target-blank
+
+font-awesome:
+  assets: true
+
+# Jekyll settings
+url: 'https://qosf.org'
+layouts_dir: ./doks-theme/_layouts
+includes_dir: ./doks-theme/_includes
+exclude: [ 'README.md', 'CHANGELOG.md' ]
+permalink: /:title/
