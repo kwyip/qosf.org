@@ -1,0 +1,135 @@
+cohort:
+  name: Cohort Operations Workspace
+  cohort_label: Cohort 12
+  application_window: "2026-07-01 to 2026-08-15"
+  program_window: "2026-09-01 to 2026-12-18"
+  matching_review: "2026-08-16 to 2026-08-25"
+  decision_release: "2026-08-28"
+metrics:
+  - label: Mentee applications
+    value: 184
+    note: 61 shortlisted for mentor review
+  - label: Mentor capacity
+    value: 42
+    note: 28 mentors across 14 research areas
+  - label: Suggested matches
+    value: 73
+    note: Ranked with timezone, interests, level, and availability
+  - label: Active projects
+    value: 18
+    note: 4 need organizer attention this week
+application_forms:
+  mentee:
+    title: Mentee application
+    description: Capture applicant context needed to evaluate readiness and create a fair mentor shortlist.
+    fields:
+      - Full name and preferred name
+      - Email address, Slack/GitHub handles, and consent to be contacted
+      - Country, UTC offset, weekly availability, and meeting preferences
+      - Education level, current affiliation, and quantum/software background
+      - Research interests, preferred project areas, and open-source experience
+      - Motivation statement, portfolio links, and optional demographic self-identification
+      - Data retention consent and privacy acknowledgement
+  mentor:
+    title: Mentor application
+    description: Capture mentor capacity, project ideas, availability, and constraints for safe matching.
+    fields:
+      - Full name, email address, affiliation, and public profile links
+      - Timezone, mentoring availability, expected meeting cadence, and preferred cohort dates
+      - Research interests, project ideas, technical stack, and required mentee background
+      - Maximum mentees or teams, co-mentor preferences, and conflict-of-interest disclosures
+      - Communication expectations, accessibility constraints, and code of conduct acknowledgement
+      - Data retention consent and privacy acknowledgement
+matching_weights:
+  - factor: Research interest overlap
+    weight: 35
+    detail: Shared tags between mentee interests, mentor expertise, and proposed project areas.
+  - factor: Timezone compatibility
+    weight: 25
+    detail: Meeting-window overlap, UTC offset distance, and preferred cadence.
+  - factor: Readiness and educational level
+    weight: 20
+    detail: Applicant background compared with mentor/project prerequisites.
+  - factor: Availability and capacity
+    weight: 10
+    detail: Weekly hours, mentor capacity, and expected project load.
+  - factor: Open-source and collaboration fit
+    weight: 10
+    detail: GitHub experience, communication preferences, and team-size preferences.
+sample_matches:
+  - mentee: Applicant Q-184
+    mentor: Mentor A-17
+    score: 94
+    timezone: Strong
+    interests: Quantum error mitigation, Qiskit, benchmarking
+    status: Invite to interview
+  - mentee: Applicant Q-092
+    mentor: Mentor B-03
+    score: 88
+    timezone: Good
+    interests: Quantum chemistry, VQE, Python tooling
+    status: Organizer review
+  - mentee: Applicant Q-141
+    mentor: Mentor C-11
+    score: 76
+    timezone: Needs async plan
+    interests: Quantum machine learning, documentation, tutorials
+    status: Backup match
+program_timeline:
+  - phase: Applications open
+    dates: Jul 1 - Aug 15, 2026
+    owner: Applicants and mentors
+    output: Submitted forms, consent, and portfolio links
+  - phase: Eligibility screening
+    dates: Aug 16 - Aug 20, 2026
+    owner: Organizers
+    output: Complete records, anonymized exports, and review queues
+  - phase: Matching review
+    dates: Aug 21 - Aug 25, 2026
+    owner: Organizers and mentors
+    output: Ranked shortlist, conflicts checked, and interview notes
+  - phase: Decision release
+    dates: Aug 28, 2026
+    owner: Organizers
+    output: Acceptance, waitlist, and rejection emails
+  - phase: Kickoff and project planning
+    dates: Sep 1 - Sep 11, 2026
+    owner: Project teams
+    output: Project charter, repository access, milestones, and communication plan
+  - phase: Build sprints
+    dates: Sep 14 - Dec 4, 2026
+    owner: Project teams
+    output: Weekly updates, milestone demos, blockers, and pull requests
+  - phase: Final showcase
+    dates: Dec 7 - Dec 18, 2026
+    owner: Project teams and organizers
+    output: Final report, recorded demo, merged code, and alumni handoff
+projects:
+  - title: Noise-aware quantum circuit transpilation
+    mentor: Mentor A-17
+    mentees: 3
+    milestone: Prototype benchmark suite
+    due: "Oct 23, 2026"
+    status: On track
+    health: green
+  - title: Quantum chemistry tutorial extensions
+    mentor: Mentor B-03
+    mentees: 2
+    milestone: Draft notebooks ready for review
+    due: "Nov 6, 2026"
+    status: Needs review
+    health: yellow
+  - title: QML documentation and examples
+    mentor: Mentor C-11
+    mentees: 2
+    milestone: Scope reset after dependency change
+    due: "Oct 30, 2026"
+    status: At risk
+    health: red
+security_controls:
+  - Encrypt sensitive application records in transit with HTTPS and at rest with managed database encryption.
+  - Use role-based access control for organizers, reviewers, mentors, and read-only auditors.
+  - Store consent, retention policy version, and access logs with each application record.
+  - Keep matching exports pseudonymized by default and reveal identity only to authorized organizers.
+  - Separate public Jekyll content from the private API and database layer.
+  - Support deletion, correction, and export workflows for applicants who exercise privacy rights.
